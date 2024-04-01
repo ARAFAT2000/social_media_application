@@ -1,6 +1,8 @@
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:flutter/material.dart';
+import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
+import 'package:social_media_application/view/chat/messege_screen.dart';
 
 
 class UserListScreen extends StatefulWidget {
@@ -29,6 +31,18 @@ class _UserListScreenState extends State<UserListScreen> {
               return Card(
                 elevation: 0,
                 child: ListTile(
+                  onTap: (){
+                    PersistentNavBarNavigator.pushNewScreen(context,
+                        screen: MessegeScreen(
+                          image:'',
+                          email: snapshot.child('email').value.toString(),
+                          name: snapshot.child('username').value.toString(),
+                          reiceverId: snapshot.child('uid').value.toString(),
+                        ),
+                    withNavBar: false
+                    );
+
+                  },
                   //profile picture akhne upload krte hbe
                   leading: CircleAvatar(
                     backgroundColor: Colors.blueGrey,
@@ -37,7 +51,9 @@ class _UserListScreenState extends State<UserListScreen> {
                   title: Text(snapshot.child('username').value.toString()),
                   subtitle: Text(snapshot.child('email').value.toString()),
                 ),
+
               );
+
             }
         ),
       ),

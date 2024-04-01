@@ -4,6 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:social_media_application/res/colors.dart';
 import 'package:social_media_application/utils/routes_name.dart';
+import 'package:social_media_application/view/add_page/add_page_screen.dart';
+import 'package:social_media_application/view/chat_screen/chat_screen.dart';
+import 'package:social_media_application/view/homepage/home_page.dart';
+import 'package:social_media_application/view/profile/profile.dart';
 import 'package:social_media_application/view/user/user_list_screen.dart';
 import 'package:social_media_application/view_model/services/session_manager.dart';
 
@@ -23,11 +27,11 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
   List<Widget> _buildScreens()
   {
     return [
-      Text('Home'),
-      Text('Chat'),
-      Text('Add'),
+      HomePageScreen(),
+      ChatPageScreen(),
+      AddPageScreen(),
       UserListScreen(),
-      Text('Profile'),
+      ProfileScreen()
       
     ];
   }

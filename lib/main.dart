@@ -5,8 +5,10 @@ import 'package:social_media_application/res/colors.dart';
 import 'package:social_media_application/utils/routes.dart';
 import 'package:social_media_application/utils/routes_name.dart';
 import 'package:social_media_application/view/login/login_screen.dart';
+import 'package:social_media_application/view/profile/profile.dart';
 import 'package:social_media_application/view/signup/sign_up_screen.dart';
 import 'package:social_media_application/view/splass/splass_screen.dart';
+import 'package:social_media_application/view/user/user_list_screen.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -53,8 +55,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:const SplashScreen(),
-      initialRoute: RouteName.splashScreen,
+      home:SplashScreen(),
+     initialRoute: RouteName.splashScreen,
       onGenerateRoute: Routes.generateRoute,
     );
   }
